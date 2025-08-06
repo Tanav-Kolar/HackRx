@@ -123,7 +123,11 @@ async def generate_answer_with_groq(query: str, retrieved_results: List[dict], g
 
 
 # --- FastAPI Endpoint ---
-@app.post("/rag/run", response_model=RunResponse)
+@app.get("/health", tags=["Monitoring"])
+async def health_check():
+    return {"status": "ok"}
+
+@app.post("/hackrx/run", response_model=RunResponse)
 async def run_rag_pipeline(request: RunRequest):
     """
     Runs the RAG pipeline for a given PDF document URL and a list of questions.
