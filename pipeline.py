@@ -11,6 +11,7 @@ from llama_index.core.storage.docstore import SimpleDocumentStore
 from llama_index.readers.file import PyMuPDFReader
 from llama_index.llms.groq import Groq
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+import faiss
 
 
 class Pipeline:
